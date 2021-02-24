@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+mongoose.set('useFindAndModify', false);
+
 let postSchema = new Schema({
     title: {
         type: String,
