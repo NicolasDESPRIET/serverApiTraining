@@ -47,9 +47,7 @@ exports.getAPost = (req, res) => {
 }
 
 exports.updateAPost = (req, res) => {
-    let updatePost = req.body;
-
-    Post.findByIdAndUpdate(req.params.id_post, updatePost, {new: true}, (error, post) => {
+    Post.findByIdAndUpdate(req.params.id_post, req.body, {new: true}, (error, post) => {
         if(error) {
             res.status(500);
             console.log(error);
